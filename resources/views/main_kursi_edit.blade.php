@@ -205,18 +205,18 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        @foreach($studio as $s)
-                            <form action="/main_studio/studio_update" method="post">
+                        @foreach($kursi as $k)
+                            <form action="/main_kursi/kursi_update" method="post">
                                 <table class="table align-items-center table-flush">
                                     {{ csrf_field() }}
 
                                     <tr>
-                                        <td>ID Studio</td>
-                                        <td><input readonly name="idstudio" value="{{ $s->id_studio }}"></td>
+                                        <td>ID Kursi</td>
+                                        <td><input readonly name="idkursi" value="{{ $k->id_kursi }}"></td>
                                     </tr>
                                     <tr>
-                                        <td>No Studio</td>
-                                        <td><input type="text" required="required" name="nostudio" value="{{ $s->no_studio }}"></td>
+                                        <td>No Kursi</td>
+                                        <td><input type="text" required="required" name="nokursi" value="{{ $k->no_kursi }}"></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>

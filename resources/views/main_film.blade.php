@@ -1,112 +1,245 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ url('css/main_css.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('css/main_topnav.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Dashboard</title>
+    <!-- Favicon -->
+    <link href="{{ url('assets/img/brand/favicon.png') }}" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{ url('assets/vendor/nucleo/css/nucleo.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="{{ url('assets/css/argon.css?v=1.0.0') }}" rel="stylesheet">
 </head>
+
 <body>
-<h2>Admin Menu</h2>
-
-<div class="topnav">
-    <a class="active" href="main_film">Film</a>
-    <a href="main_studio">Studio</a>
-    <a href="#null">-Input Here-</a>
-    <a href="#null">-Input Here-</a>
-    <a href="/" style="float: right">Keluar</a>
+<!-- Sidenav -->
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Brand -->
+        <a class="navbar-brand pt-0" href="./index.html">
+            <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+        </a>
+        <!-- User -->
+        <ul class="nav align-items-center d-md-none">
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="ni ni-bell-55"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="{{ url('assets/img/theme/team-1-800x800.jpg') }}">
+              </span>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+            <!-- Collapse header -->
+            <div class="navbar-collapse-header d-md-none">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="./index.html">
+                            <img src="{{ url('assets/img/brand/blue.png') }}">
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Form -->
+            <form class="mt-4 mb-3 d-md-none">
+                <div class="input-group input-group-rounded input-group-merge">
+                    <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fa fa-search"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Navigation -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">
+                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#submenu1">
+                        <i class="ni ni-bullet-list-67 text-red"></i> Data Bioskop
+                    </a>
+                    <!-- Submenu content -->
+                    <div id='submenu1' class="collapse sidebar-submenu">
+                        <a href="/main_film" class="nav-link list-group-item list-group-item-action">
+                            Film
+                        </a>
+                        <a href="/main_studio" class="nav-link list-group-item list-group-item-action">
+                            Studio
+                        </a>
+                        <a href="/main_kursi" class="nav-link list-group-item list-group-item-action">
+                            Kursi
+                        </a>
+                        <a href="/main_kategori" class="nav-link list-group-item list-group-item-action">
+                            Kategori
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Main content -->
+<div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <!-- Brand -->
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+            <!-- Form -->
+            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+                <div class="form-group mb-0">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Search" type="text">
+                    </div>
+                </div>
+            </form>
+            <!-- User -->
+            <ul class="navbar-nav align-items-center d-none d-md-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                <span class="avatar avatar-sm rounded-circle">
+                  <img alt="Image placeholder" src="../assets/img/theme/adminlogo.png">
+                </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="ni ni-user-run"></i>
+                            {{ __('Logout') }}
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                            </form>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-5 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+            </div>
+        </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+        <div class="row mt-5">
+            <div class="col-xl-12 mb-5 mb-xl-0">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">Film List</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="/main_film/film_add" class="btn btn-sm btn-primary">Tambah Data</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID Film</th>
+                                <th scope="col">Nama Film</th>
+                                <th scope="col">Sinopsis Film</th>
+                                <th scope="col">Poster</th>
+                                <th scope="col">Opsi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($film as $f)
+                                <tr>
+                                    <th scope="row" style="text-align: center">{{ $f->id_film }}</th>
+                                    <td >{{ $f->judul }}</td>
+                                    <td >{{ $f->sinopsis }}</td>
+                                    <td align="center">{{ $f->poster_film }}</td>
+                                    <td align="center">
+                                        <a href="/main_film/film_edit/{{ $f->id_film }}">Edit</a>
+                                        |
+                                        <a href="/main_film/film_delete/{{ $f->id_film }}">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
-
-<div class="tab">
-    <button class="tablinks" onclick="openContent(event, 'Show')" id="defaultOpen">List Data</button>
-    <button class="tablinks" onclick="openContent(event, 'Add')">Add Data</button>
-    <button class="tablinks" onclick="alert('Pilih Data Terlebih Dahulu !')">Edit Data</button>
-</div>
-
-<div id="Show" class="tabcontent">
-    <h2>List Data | <a style="font-size: 15px">+ Tambah Data</a></h2>
-    <p><table class="table table-bordered">
-        <thead class="thead-dark">
-{{--        <col width="100">--}}
-{{--        <col width="250">--}}
-{{--        <col width="200">--}}
-{{--        <col width="250">--}}
-{{--        <col width="200">--}}
-        <tr>
-            <th scope="col" width="80px">ID Film</th>
-            <th scope="col" width="250px">Nama Film</th>
-            <th scope="col">Sinopsis Film</th>
-            <th scope="col">Poster</th>
-            <th scope="col" width="150px">Opsi</th>
-        </tr>
-        </thead>
-        @foreach($film as $f)
-            <tr>
-                <th scope="row" style="text-align: center">{{ $f->id_film }}</th>
-                <td >{{ $f->judul }}</td>
-                <td >{{ $f->sinopsis }}</td>
-                <td align="center">{{ $f->poster_film }}</td>
-                <td align="center">
-                    <a href="main_film/film_edit/{{ $f->id_film }}">Edit</a>
-                    |
-                    <a href="main_film/film_delete/{{ $f->id_film }}">Hapus</a>
-                </td>
-            </tr>
-        @endforeach
-    </table></p>
-</div>
-
-<div id="Add" class="tabcontent">
-    <h3>Add Data</h3>
-    <hr>
-    <p>
-    <form action="main_film/film_storedata" method="post" enctype="multipart/form-data">
-        <table>
-            {{ csrf_field() }}
-
-            <tr>
-                <td>ID Film</td>
-                <td><input type="text" name="id" required="required"></td>
-            </tr>
-            <tr>
-                <td>Nama Film</td>
-                <td><input type="text" name="namafilm" required="required"></td>
-            </tr>
-            <tr>
-                <td>Sinopsis</td>
-                <td><textarea name="sinopsis" required="required"></textarea></td>
-            </tr>
-            <tr>
-                <td>Poster</td>
-                <td><input type="text" name="poster" required="required"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Simpan" class="btn btn-primary"></td>
-            </tr>
-        </table>
-    </form>
-    </p>
-</div>
-
-
-<script>
-    function openContent(evt, DataContent) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(DataContent).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
-
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Optional JS -->
+<script src="{{ url('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ url('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+<!-- Argon JS -->
+<script src="{{ url('assets/js/argon.js?v=1.0.0') }}"></script>
 </body>
+
 </html>

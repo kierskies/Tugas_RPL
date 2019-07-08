@@ -188,6 +188,23 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
+                        <form action="/main_studio/studio_storedata" method="post" enctype="multipart/form-data">
+                            <table class="table align-items-center table-flush">
+                                {{ csrf_field() }}
+
+                                <tr>
+                                    <td>ID Studio</td>
+                                    <td><input type="text" name="idstudio" required="required"></td>
+                                </tr>
+                                <tr>
+                                    <td>No Studio</td>
+                                    <td><input type="text" name="nostudio" required="required"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -205,33 +222,10 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        @foreach($studio as $s)
-                            <form action="/main_studio/studio_update" method="post">
-                                <table class="table align-items-center table-flush">
-                                    {{ csrf_field() }}
-
-                                    <tr>
-                                        <td>ID Studio</td>
-                                        <td><input readonly name="idstudio" value="{{ $s->id_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>No Studio</td>
-                                        <td><input type="text" required="required" name="nostudio" value="{{ $s->no_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        @endforeach
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">
@@ -253,5 +247,4 @@
 <!-- Argon JS -->
 <script src="{{ url('assets/js/argon.js?v=1.0.0') }}"></script>
 </body>
-
 </html>

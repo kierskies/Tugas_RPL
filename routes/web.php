@@ -15,32 +15,59 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('add','AddController@index');
+Route::get('testlogin', function() {
+    return view('welcome_login');
+});
+
+Route::get('/add','AddController@index');
 
 //Main Route
     //Film Route
-        Route::get('main_film','FilmController@index');
+        Route::get('/main_film','FilmController@index');
     //Studio Route
-        Route::get('main_studio','StudioController@index');
+        Route::get('/main_studio','StudioController@index');
+    //Kursi Route
+        Route::get('/main_kursi', 'KursiController@index');
+    //Kategori Route
 
 // Route
     //Add Data
         //Film
-            Route::post('main_film/film_storedata','FilmController@film_storedata');
+            Route::get('/main_film/film_add', function (){
+                return view('main_film_add');
+            });
+            Route::post('/main_film/film_storedata','FilmController@film_storedata');
         //Studio
-            Route::post('main_studio/studio_storedata','StudioController@studio_storedata');
-    //Edit Data
+            Route::get('/main_studio/studio_add', function(){
+                return view('main_studio_add');
+            });
+            Route::post('/main_studio/studio_storedata','StudioController@studio_storedata');
+        //Kursi
+            Route::get('/main_kursi/kursi_add', function(){
+                return view('main_kursi_add');
+            });
+            Route::post('/main_kursi/kursi_storedata','KursiController@kursi_storedata');
+//Edit Data
         //Film
-            Route::get('main_film/film_edit/{id}','FilmController@film_edit');
-            Route::post('main_film/film_update','FilmController@film_update');
+            Route::get('/main_film/film_edit/{id}','FilmController@film_edit');
+            Route::post('/main_film/film_update','FilmController@film_update');
         //Studio
-            Route::get('main_studio/studio_edit/{id}','StudioController@studio_edit');
-            Route::post('main_studio/studio_update','StudioController@studio_update');
+            Route::get('/main_studio/studio_edit/{id}','StudioController@studio_edit');
+            Route::post('/main_studio/studio_update','StudioController@studio_update');
+        //Kursi
+            Route::get('/main_kursi/kursi_edit/{id}','KursiController@kursi_edit');
+            Route::post('/main_kursi/kursi_update','KursiController@kursi_update');
     //Hapus Data
         //Film
-            Route::get('main_film/film_delete/{id}','FilmController@film_delete');
+            Route::get('/main_film/film_delete/{id}','FilmController@film_delete');
         //Studio
-            Route::get('main_studio/studio_delete/{id}','StudioController@studio_delete');
+            Route::get('/main_studio/studio_delete/{id}','StudioController@studio_delete');
+        //Kursi
+            Route::get('/main_kursi/kursi_delete/{id}','KursiController@kursi_delete');
     //Image Data
 
 //Studio Route
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

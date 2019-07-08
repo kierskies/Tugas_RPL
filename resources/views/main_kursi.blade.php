@@ -27,7 +27,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/main_film">
+        <a class="navbar-brand pt-0" href="./index.html">
             <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
@@ -67,7 +67,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="/main_film">
+                        <a href="./index.html">
                             <img src="{{ url('assets/img/brand/blue.png') }}">
                         </a>
                     </div>
@@ -127,7 +127,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/main_film">Dashboard</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                 <div class="form-group mb-0">
@@ -145,7 +145,7 @@
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
+                  <img alt="Image placeholder" src="../assets/img/theme/adminlogo.png">
                 </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -172,66 +172,49 @@
             </div>
         </div>
     </div>
-
-    {{--    TAMBAH DATA--}}
-
+    <!-- Page content -->
     <div class="container-fluid mt--7">
         <div class="row mt-5">
-            <div class="col-xl-6 mb-5 mb-xl-0">
+            <div class="col-xl-12 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Tambah Data</h3>
+                                <h3 class="mb-0">Kursi List</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="/main_kursi/kursi_add" class="btn btn-sm btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID Kursi</th>
+                                <th scope="col">No Kursi</th>
+                                <th scope="col">Opsi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($kursi as $k)
+                                <tr>
+                                    <th align="center">{{ $k->id_kursi }}</th>
+                                    <td >{{ $k->no_kursi }}</td>
+                                    <td align="center">
+                                        <a href="main_kursi/kursi_edit/{{ $k->id_kursi }}">Edit</a>
+                                        |
+                                        <a href="main_kursi/kursi_delete/{{ $k->id_kursi }}">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-            {{--            EDIT DATA--}}
-
-            <div class="col-xl-6 mb-5 mb-xl-0">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Edit Data</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- Projects table -->
-                        @foreach($studio as $s)
-                            <form action="/main_studio/studio_update" method="post">
-                                <table class="table align-items-center table-flush">
-                                    {{ csrf_field() }}
-
-                                    <tr>
-                                        <td>ID Studio</td>
-                                        <td><input readonly name="idstudio" value="{{ $s->id_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>No Studio</td>
-                                        <td><input type="text" required="required" name="nostudio" value="{{ $s->no_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-
-
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">
@@ -240,6 +223,7 @@
                         &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
                     </div>
                 </div>
+            </div>
         </footer>
     </div>
 </div>

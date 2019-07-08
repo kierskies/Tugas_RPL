@@ -188,6 +188,31 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
+                        <form action="/main_film/film_storedata" method="post" enctype="multipart/form-data">
+                            <table class="table align-items-center table-flush">
+                                {{ csrf_field() }}
+
+                                <tr>
+                                    <td>ID Film</td>
+                                    <td><input type="text" name="id" required="required"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Film</td>
+                                    <td><input type="text" name="namafilm" required="required"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sinopsis</td>
+                                    <td><textarea name="sinopsis" required="required"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Poster</td>
+                                    <td><input type="text" name="poster" required="required"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -205,25 +230,33 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        @foreach($studio as $s)
-                            <form action="/main_studio/studio_update" method="post">
-                                <table class="table align-items-center table-flush">
-                                    {{ csrf_field() }}
+{{--                        @foreach($film as $f)--}}
+{{--                        <form action="/main_film/film_update" method="post">--}}
+{{--                            <table class="table align-items-center table-flush">--}}
+{{--                                {{ csrf_field() }}--}}
 
-                                    <tr>
-                                        <td>ID Studio</td>
-                                        <td><input readonly name="idstudio" value="{{ $s->id_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>No Studio</td>
-                                        <td><input type="text" required="required" name="nostudio" value="{{ $s->no_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        @endforeach
+{{--                                <tr>--}}
+{{--                                    <td>ID Film</td>--}}
+{{--                                    <td><input name="id" value="{{ $f->id_film }}" readonly style="border: none"></td>--}}
+{{--                                </tr>--}}
+{{--                                <tr>--}}
+{{--                                    <td>Nama Film</td>--}}
+{{--                                    <td><input type="text" required="required" name="namafilm" value="{{ $f->judul }}"></td>--}}
+{{--                                </tr>--}}
+{{--                                <tr>--}}
+{{--                                    <td>Sinopsis</td>--}}
+{{--                                    <td><textarea required="required" name="sinopsis" >{{ $f->sinopsis }}</textarea></td>--}}
+{{--                                </tr>--}}
+{{--                                <tr>--}}
+{{--                                    <td>Poster</td>--}}
+{{--                                    <td><input type="text" name="poster" required="required" value="{{ $f->poster_film }}"/></td>--}}
+{{--                                </tr>--}}
+{{--                                <tr>--}}
+{{--                                    <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>--}}
+{{--                                </tr>--}}
+{{--                            </table>--}}
+{{--                        </form>--}}
+{{--                        @endforeach--}}
                     </div>
                 </div>
             </div>
@@ -239,7 +272,7 @@
                     <div class="copyright text-center text-xl-left text-muted">
                         &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
                     </div>
-                </div>
+            </div>
         </footer>
     </div>
 </div>
@@ -253,5 +286,4 @@
 <!-- Argon JS -->
 <script src="{{ url('assets/js/argon.js?v=1.0.0') }}"></script>
 </body>
-
 </html>

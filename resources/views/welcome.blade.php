@@ -32,9 +32,9 @@
                     Admin Menu
                 </div>
 
-                <div class="links">
-                    <a href="main_film">Masuk</a>
-                </div>
+{{--                <div class="links">--}}
+{{--                    <a href="main_film">Masuk</a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </body>
