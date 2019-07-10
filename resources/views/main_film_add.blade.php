@@ -216,52 +216,6 @@
                     </div>
                 </div>
             </div>
-
-            {{--            EDIT DATA--}}
-
-            <div class="col-xl-6 mb-5 mb-xl-0">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Edit Data</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- Projects table -->
-{{--                        @foreach($film as $f)--}}
-{{--                        <form action="/main_film/film_update" method="post">--}}
-{{--                            <table class="table align-items-center table-flush">--}}
-{{--                                {{ csrf_field() }}--}}
-
-{{--                                <tr>--}}
-{{--                                    <td>ID Film</td>--}}
-{{--                                    <td><input name="id" value="{{ $f->id_film }}" readonly style="border: none"></td>--}}
-{{--                                </tr>--}}
-{{--                                <tr>--}}
-{{--                                    <td>Nama Film</td>--}}
-{{--                                    <td><input type="text" required="required" name="namafilm" value="{{ $f->judul }}"></td>--}}
-{{--                                </tr>--}}
-{{--                                <tr>--}}
-{{--                                    <td>Sinopsis</td>--}}
-{{--                                    <td><textarea required="required" name="sinopsis" >{{ $f->sinopsis }}</textarea></td>--}}
-{{--                                </tr>--}}
-{{--                                <tr>--}}
-{{--                                    <td>Poster</td>--}}
-{{--                                    <td><input type="text" name="poster" required="required" value="{{ $f->poster_film }}"/></td>--}}
-{{--                                </tr>--}}
-{{--                                <tr>--}}
-{{--                                    <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>--}}
-{{--                                </tr>--}}
-{{--                            </table>--}}
-{{--                        </form>--}}
-{{--                        @endforeach--}}
-                    </div>
-                </div>
-            </div>
-
-
         </div>
 
 

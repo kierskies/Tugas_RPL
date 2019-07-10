@@ -47,7 +47,7 @@ Route::get('/add','AddController@index');
             Route::get('/main_kursi/kursi_add', function(){
                 return view('main_kursi_add');
             });
-            Route::post('/main_kursi/kursi_storedata','KategoriController@kategori_storedata');
+            Route::post('/main_kursi/kursi_storedata','KursiController@kursi_storedata');
         //Kategori
             Route::get('/main_kategori/kategori_add', function(){
                 return view('main_kategori_add');
