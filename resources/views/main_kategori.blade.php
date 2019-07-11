@@ -28,7 +28,9 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="./index.html">
-            <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+            <div class="p-3 mb-2 bg-gradient-primary text-white">
+                CINEMATIXX
+            </div>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -127,7 +129,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                 <div class="form-group mb-0">

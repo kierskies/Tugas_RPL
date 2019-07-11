@@ -228,6 +228,7 @@
                     <div class="copyright text-center text-xl-left text-muted">
                         &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
                     </div>
+                </div>
             </div>
         </footer>
     </div>
