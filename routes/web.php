@@ -30,6 +30,8 @@ Route::get('/add','AddController@index');
         Route::get('/main_kursi', 'KursiController@index');
     //Kategori Route
         Route::get('/main_kategori', 'KategoriController@index');
+    //Kategori Route
+        Route::get('/main_jadwal', 'JadwalController@index');
 
 // Route
     //Add Data
@@ -53,6 +55,11 @@ Route::get('/add','AddController@index');
                 return view('main_kategori_add');
             });
             Route::post('/main_kategori/kategori_storedata','KategoriController@kategori_storedata');
+        //Jadwal
+            Route::get('/main_jadwal/jadwal_add', function(){
+                return view('main_jadwal_add');
+            });
+            Route::post('/main_jadwal/jadwal_storedata','JadwalController@jadwal_storedata');
 //Edit Data
         //Film
             Route::get('/main_film/film_edit/{id}','FilmController@film_edit');
@@ -66,6 +73,9 @@ Route::get('/add','AddController@index');
         //Kategori
             Route::get('/main_kategori/kategori_edit/{id}','KategoriController@kategori_edit');
             Route::post('/main_kategori/kategori_update','KategoriController@kategori_update');
+        //Jadwal
+            Route::get('/main_jadwal/jadwal_edit/{id}','JadwalController@jadwal_edit');
+            Route::post('/main_jadwal/jadwal_update','JadwalController@jadwal_update');
     //Hapus Data
         //Film
             Route::get('/main_film/film_delete/{id}','FilmController@film_delete');
@@ -75,6 +85,8 @@ Route::get('/add','AddController@index');
             Route::get('/main_kursi/kursi_delete/{id}','KursiController@kursi_delete');
         //Kategori
             Route::get('/main_kategori/kategori_delete/{id}','KategoriController@Kategori_delete');
+        //Jadwal
+            Route::get('/main_jadwal/jadwal_delete/{id}','JadwalController@Jadwal_delete');
 
 //Image Data
 

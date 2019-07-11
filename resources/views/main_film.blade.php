@@ -118,6 +118,9 @@
                         <a href="/main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
                         </a>
+                        <a href="/main_jadwal" class="nav-link list-group-item list-group-item-action">
+                            Jadwal
+                        </a>
                     </div>
                 </li>
             </ul>

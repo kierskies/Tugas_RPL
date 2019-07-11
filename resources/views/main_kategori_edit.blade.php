@@ -28,7 +28,9 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="/main_film">
-            <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+            <div class="p-3 mb-2 bg-gradient-primary text-white">
+                CINEMATIXX
+            </div>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -208,11 +210,7 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">
