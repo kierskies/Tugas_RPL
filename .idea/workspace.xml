@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d252c948-6738-41c1-8b83-e6d51a87a768" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PemesanController.php" afterDir="false" />
+    <list default="true" id="d252c948-6738-41c1-8b83-e6d51a87a768" name="Default Changelist" comment="ReDirectory folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JadwalController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KategoriController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KategoriController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KursiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KursiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_film.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_film_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_film_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_jadwal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pemesan/main_pemesan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kategori.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kategori_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kategori_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kursi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kursi_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_kursi_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_studio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_studio_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main_studio_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -111,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="190" column="49" selection-start-line="190" selection-start-column="49" selection-end-line="190" selection-end-column="49" />
+            <state relative-caret-position="252">
+              <caret line="224" column="18" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -476,7 +456,7 @@
       <workItem from="1562902699238" duration="13000" />
       <workItem from="1563287414838" duration="6048000" />
       <workItem from="1563332972938" duration="1696000" />
-      <workItem from="1563338954325" duration="1466000" />
+      <workItem from="1563338954325" duration="2367000" />
     </task>
     <task id="LOCAL-00001" summary="Brand new shit comin up !&#10;&lt;Bootstraped&gt;">
       <created>1562546777016</created>
@@ -520,11 +500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562835142109</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ReDirectory folder">
+      <created>1563340709418</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563340709418</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104731000" />
+    <option name="totallyTimeSpent" value="105632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -610,7 +597,8 @@
     <MESSAGE value="Changing UI (In Progress)" />
     <MESSAGE value="updated UI" />
     <MESSAGE value="Full Upload Project File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full Upload Project File" />
+    <MESSAGE value="ReDirectory folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReDirectory folder" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/storage/app/ImgApp.php">
@@ -934,8 +922,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="190" column="49" selection-start-line="190" selection-start-column="49" selection-end-line="190" selection-end-column="49" />
+        <state relative-caret-position="252">
+          <caret line="224" column="18" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
         </state>
       </provider>
     </entry>
