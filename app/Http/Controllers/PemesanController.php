@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class FilmController extends Controller
+class PemesanController extends Controller
 {
     //View Route
     public function index(){
@@ -13,7 +13,7 @@ class FilmController extends Controller
         $film = DB::table('film')->get();
 
         //Mengirim data ke view model
-        return view('/admin/main_film',['film' => $film ]);
+        return view('pemesan/main_pemesan',['film' => $film ]);
     }
 
     //Add Route
@@ -26,7 +26,7 @@ class FilmController extends Controller
             'poster_film' => $request->poster
         ]);
         //kembali ke menu utama
-        return redirect('/admin/main_film');
+        return redirect('admin/main_film');
     }
 
     //Edit Route
@@ -34,7 +34,7 @@ class FilmController extends Controller
         //Ngambil data film dari ID
         $film = DB::table('film')->where('id_film',$id)->get();
         //Mindahin data film ke view model
-        return view('/admin/main_film_edit',['film' => $film]);
+        return view('admin/main_film_edit',['film' => $film]);
     }
 
     //Update Route
@@ -46,7 +46,7 @@ class FilmController extends Controller
             'poster_film' => $request->poster
         ]);
         //kembali ke menu utama
-        return redirect('/admin/main_film');
+        return redirect('admin/main_film');
     }
 
     //Delete Route
@@ -54,7 +54,7 @@ class FilmController extends Controller
         //menghapus data berdasarkan ID
         DB::table('film')->where('id_film',$id)->delete();
         //kembali ke view model
-        return redirect('/admin/main_film');
+        return redirect('admin/main_film');
     }
 
     //Image Route

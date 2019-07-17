@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +26,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/main_film">
+        <a class="navbar-brand pt-0" href="main_film">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
@@ -69,7 +68,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="/main_film">
+                        <a href="main_film">
                             <img src="{{ url('assets/img/brand/blue.png') }}">
                         </a>
                     </div>
@@ -95,7 +94,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/main_film">
+                    <a class="nav-link" href="main_film">
                         <i class="ni ni-tv-2 text-primary"></i> Dashboard
                     </a>
                 </li>
@@ -105,16 +104,16 @@
                     </a>
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
-                        <a href="/main_film" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_film" class="nav-link list-group-item list-group-item-action">
                             Film
                         </a>
-                        <a href="/main_studio" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_studio" class="nav-link list-group-item list-group-item-action">
                             Studio
                         </a>
-                        <a href="/main_kursi" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_kursi" class="nav-link list-group-item list-group-item-action">
                             Kursi
                         </a>
-                        <a href="/main_kategori" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
                         </a>
                     </div>
@@ -129,7 +128,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="main_film">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                 <div class="form-group mb-0">
@@ -147,7 +146,7 @@
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
+                  <img alt="Image placeholder" src="../assets/img/theme/adminlogo.png">
                 </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -174,39 +173,45 @@
             </div>
         </div>
     </div>
-
-    {{--    TAMBAH DATA--}}
-
+    <!-- Page content -->
     <div class="container-fluid mt--7">
         <div class="row mt-5">
-            <div class="col-xl-6 mb-5 mb-xl-0">
+            <div class="col-xl-12 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Tambah Data</h3>
+                                <h3 class="mb-0">Studio List</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="/admin/main_studio/studio_add" class="btn btn-sm btn-primary">Tambah Data</a>
                             </div>
                         </div>
-                    </div>
+                    </div>S
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        <form action="/main_kursi/kursi_storedata" method="post" enctype="multipart/form-data">
-                            <table class="table align-items-center table-flush">
-                                {{ csrf_field() }}
-
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID Studio</th>
+                                <th scope="col">No Studio</th>
+                                <th scope="col">Opsi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($studio as $s)
                                 <tr>
-                                    <td>ID Kursi</td>
-                                    <td><input type="text" name="idkursi" required="required"></td>
+                                    <th align="center">{{ $s->id_studio }}</th>
+                                    <td >{{ $s->no_studio }}</td>
+                                    <td align="center">
+                                        <a href="/admin/main_studio/studio_edit/{{ $s->id_studio }}">Edit</a>
+                                        |
+                                        <a href="/admin/main_studio/studio_delete/{{ $s->id_studio }}">Hapus</a>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>No Kursi</td>
-                                    <td><input type="text" name="nokursi" required="required"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
-                                </tr>
-                            </table>
-                        </form>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -233,4 +238,5 @@
 <!-- Argon JS -->
 <script src="{{ url('assets/js/argon.js?v=1.0.0') }}"></script>
 </body>
+
 </html>

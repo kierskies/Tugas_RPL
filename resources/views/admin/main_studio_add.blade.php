@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +26,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/main_film">
+        <a class="navbar-brand pt-0" href="main_film">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
@@ -69,7 +68,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="/main_film">
+                        <a href="main_film">
                             <img src="{{ url('assets/img/brand/blue.png') }}">
                         </a>
                     </div>
@@ -95,7 +94,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/main_film">
+                    <a class="nav-link" href="main_film">
                         <i class="ni ni-tv-2 text-primary"></i> Dashboard
                     </a>
                 </li>
@@ -105,16 +104,16 @@
                     </a>
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
-                        <a href="/main_film" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_film" class="nav-link list-group-item list-group-item-action">
                             Film
                         </a>
-                        <a href="/main_studio" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_studio" class="nav-link list-group-item list-group-item-action">
                             Studio
                         </a>
-                        <a href="/main_kursi" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_kursi" class="nav-link list-group-item list-group-item-action">
                             Kursi
                         </a>
-                        <a href="/main_kategori" class="nav-link list-group-item list-group-item-action">
+                        <a href="main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
                         </a>
                     </div>
@@ -129,7 +128,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="main_film">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                 <div class="form-group mb-0">
@@ -190,25 +189,17 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        <form action="/main_film/film_storedata" method="post" enctype="multipart/form-data">
+                        <form action="/admin/main_studio/studio_storedata" method="post" enctype="multipart/form-data">
                             <table class="table align-items-center table-flush">
                                 {{ csrf_field() }}
 
                                 <tr>
-                                    <td>ID Film</td>
-                                    <td><input type="text" name="id" required="required"></td>
+                                    <td>ID Studio</td>
+                                    <td><input type="text" name="idstudio" required="required"></td>
                                 </tr>
                                 <tr>
-                                    <td>Nama Film</td>
-                                    <td><input type="text" name="namafilm" required="required"></td>
-                                </tr>
-                                <tr>
-                                    <td>Sinopsis</td>
-                                    <td><textarea name="sinopsis" required="required"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td>Poster</td>
-                                    <td><input type="text" name="poster" required="required"></td>
+                                    <td>No Studio</td>
+                                    <td><input type="text" name="nostudio" required="required"></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
@@ -219,8 +210,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">
@@ -228,6 +217,7 @@
                     <div class="copyright text-center text-xl-left text-muted">
                         &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
                     </div>
+                </div>
             </div>
         </footer>
     </div>

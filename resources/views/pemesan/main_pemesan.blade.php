@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,50 +26,20 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/main_film">
+        <!-- Logo -->
+        <a class="navbar-brand pt-0" href="main_film">
+            {{--            <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">--}}
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
         </a>
-        <!-- User -->
-        <ul class="nav align-items-center d-md-none">
-            <li class="nav-item dropdown">
-                <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="ni ni-bell-55"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="media align-items-center">
-              <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="{{ url('assets/img/theme/team-1-800x800.jpg') }}">
-              </span>
-                    </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </a>
-                </div>
-            </li>
-        </ul>
-        <!-- Collapse -->
+        <!-- Side Bar -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="/main_film">
+                        <a href="./index.html">
                             <img src="{{ url('assets/img/brand/blue.png') }}">
                         </a>
                     </div>
@@ -95,7 +66,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/main_film">
-                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                        <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
                 <li class="nav-item">
@@ -116,19 +87,24 @@
                         <a href="/main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
                         </a>
+                        <a href="/main_jadwal" class="nav-link list-group-item list-group-item-action">
+                            Jadwal
+                        </a>
                     </div>
                 </li>
             </ul>
         </div>
+        <!-- Side Bar -->
     </div>
 </nav>
+
 <!-- Main content -->
 <div class="main-content">
     <!-- Top navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                 <div class="form-group mb-0">
@@ -146,7 +122,7 @@
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
+                  <img alt="Image placeholder" src="../../../public/assets/img/theme/adminlogo.png">
                 </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -173,47 +149,55 @@
             </div>
         </div>
     </div>
+    <!-- Page content -->
     <div class="container-fluid mt--7">
         <div class="row mt-5">
-            {{--            EDIT DATA--}}
-            <div class="col-xl-6 mb-5 mb-xl-0">
+            <div class="col-xl-12 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Edit Data</h3>
+                                <h3 class="mb-0">Film List</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="/main_film/film_add" class="btn btn-sm btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        @foreach($studio as $s)
-                            <form action="/main_studio/studio_update" method="post">
-                                <table class="table align-items-center table-flush">
-                                    {{ csrf_field() }}
-
-                                    <tr>
-                                        <td>ID Studio</td>
-                                        <td><input readonly name="idstudio" value="{{ $s->id_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>No Studio</td>
-                                        <td><input type="text" required="required" name="nostudio" value="{{ $s->no_studio }}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        @endforeach
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">ID Pemesanan</th>
+                                <th scope="col">Judul Film</th>
+                                <th scope="col">No Kursi</th>
+                                <th scope="col">Jam Tayang</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Total Bayar</th>
+                                <th scope="col">Opsi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($film as $f)
+                            <tr>
+                                <th scope="row" style="text-align: center">{{ $f->id_film }}</th>
+                                <td >{{ $f->judul }}</td>
+                                <td >{{ $f->sinopsis }}</td>
+                                <td align="center">{{ $f->poster_film }}</td>
+                                <td align="center">
+                                    <a href="/main_film/film_edit/{{ $f->id_film }}">Edit</a>
+                                    |
+                                    <a href="/main_film/film_delete/{{ $f->id_film }}">Hapus</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">
@@ -222,6 +206,7 @@
                         &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
                     </div>
                 </div>
+            </div>
         </footer>
     </div>
 </div>

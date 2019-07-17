@@ -13,7 +13,7 @@ class StudioController extends Controller
         $studio = DB::table('studio')->get();
 
         //Mengirim data ke view model
-        return view('main_studio',['studio' => $studio ]);
+        return view('admin/main_studio',['studio' => $studio ]);
     }
 
     //Add Route
@@ -24,7 +24,7 @@ class StudioController extends Controller
             'no_studio' => $request->nostudio
         ]);
         //kembali ke menu utama
-        return redirect('main_studio');
+        return redirect('admin/main_studio');
     }
 
     //Edit Route
@@ -32,7 +32,7 @@ class StudioController extends Controller
         //Ngambil data film dari ID
         $studio = DB::table('studio')->where('id_studio',$idstudio)->get();
         //Mindahin data film ke view model
-        return view('main_studio_edit',['studio' => $studio]);
+        return view('admin/main_studio_edit',['studio' => $studio]);
     }
 
     //Update Route
@@ -42,7 +42,7 @@ class StudioController extends Controller
             'no_studio' => $request->nostudio
         ]);
         //kembali ke menu utama
-        return redirect('main_studio');
+        return redirect('admin/main_studio');
     }
 
     //Delete Route
@@ -50,7 +50,7 @@ class StudioController extends Controller
         //menghapus data berdasarkan ID
         DB::table('studio')->where('id_studio',$idstudio)->delete();
         //kembali ke view model
-        return redirect('main_studio');
+        return redirect('admin/main_studio');
     }
 
     //Image Route

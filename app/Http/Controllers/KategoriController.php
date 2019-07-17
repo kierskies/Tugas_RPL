@@ -13,7 +13,7 @@ class KategoriController extends Controller
         $kategori = DB::table('kategori')->get();
 
         //Mengirim data ke view model
-        return view('main_kategori',['kategori' => $kategori ]);
+        return view('admin/main_kategori',['kategori' => $kategori ]);
     }
 
     //Add Route
@@ -24,7 +24,7 @@ class KategoriController extends Controller
             'judul' => $request->judul
         ]);
         //kembali ke menu utama
-        return redirect('main_kategori');
+        return redirect('admin/main_kategori');
     }
 
     //Edit Route
@@ -32,7 +32,7 @@ class KategoriController extends Controller
         //Ngambil data film dari ID
         $kategori = DB::table('kategori')->where('id_kategori',$idkategori)->get();
         //Mindahin data film ke view model
-        return view('main_kategori_edit',['kategori' => $kategori]);
+        return view('admin/main_kategori_edit',['kategori' => $kategori]);
     }
 
     //Update Route
@@ -42,7 +42,7 @@ class KategoriController extends Controller
             'judul' => $request->judul
         ]);
         //kembali ke menu utama
-        return redirect('main_kategori');
+        return redirect('admin/main_kategori');
     }
 
     //Delete Route
@@ -50,6 +50,6 @@ class KategoriController extends Controller
         //menghapus data berdasarkan ID
         DB::table('kategori')->where('id_kategori',$idkategori)->delete();
         //kembali ke view model
-        return redirect('main_kategori');
+        return redirect('admin/main_kategori');
     }
 }

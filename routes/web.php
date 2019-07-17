@@ -23,70 +23,70 @@ Route::get('/add','AddController@index');
 
 //Main Route
     //Film Route
-        Route::get('/main_film','FilmController@index');
+        Route::get('admin/main_film','FilmController@index');
     //Studio Route
-        Route::get('/main_studio','StudioController@index');
+        Route::get('admin/main_studio','StudioController@index');
     //Kursi Route
-        Route::get('/main_kursi', 'KursiController@index');
+        Route::get('admin/main_kursi', 'KursiController@index');
     //Kategori Route
-        Route::get('/main_kategori', 'KategoriController@index');
+        Route::get('admin/main_kategori', 'KategoriController@index');
     //Kategori Route
-        Route::get('/main_jadwal', 'JadwalController@index');
+        Route::get('admin/main_jadwal', 'JadwalController@index');
 
 // Route
     //Add Data
         //Film
-            Route::get('/main_film/film_add', function (){
-                return view('main_film_add');
+            Route::get('admin/main_film/film_add', function (){
+                return view('admin/main_film_add');
             });
-            Route::post('/main_film/film_storedata','FilmController@film_storedata');
+            Route::post('admin/main_film/film_storedata','FilmController@film_storedata');
         //Studio
-            Route::get('/main_studio/studio_add', function(){
-                return view('main_studio_add');
+            Route::get('admin/main_studio/studio_add', function(){
+                return view('admin/main_studio_add');
             });
-            Route::post('/main_studio/studio_storedata','StudioController@studio_storedata');
+            Route::post('admin/main_studio/studio_storedata','StudioController@studio_storedata');
         //Kursi
-            Route::get('/main_kursi/kursi_add', function(){
-                return view('main_kursi_add');
+            Route::get('admin/main_kursi/kursi_add', function(){
+                return view('admin/main_kursi_add');
             });
-            Route::post('/main_kursi/kursi_storedata','KursiController@kursi_storedata');
+            Route::post('admin/main_kursi/kursi_storedata','KursiController@kursi_storedata');
         //Kategori
-            Route::get('/main_kategori/kategori_add', function(){
-                return view('main_kategori_add');
+            Route::get('admin/main_kategori/kategori_add', function(){
+                return view('admin/main_kategori_add');
             });
-            Route::post('/main_kategori/kategori_storedata','KategoriController@kategori_storedata');
+            Route::post('admin/main_kategori/kategori_storedata','KategoriController@kategori_storedata');
         //Jadwal
-            Route::get('/main_jadwal/jadwal_add', function(){
-                return view('main_jadwal_add');
+            Route::get('admin/main_jadwal/jadwal_add', function(){
+                return view('admin/main_jadwal_add');
             });
-            Route::post('/main_jadwal/jadwal_storedata','JadwalController@jadwal_storedata');
+            Route::post('admin/main_jadwal/jadwal_storedata','JadwalController@jadwal_storedata');
 //Edit Data
         //Film
-            Route::get('/main_film/film_edit/{id}','FilmController@film_edit');
-            Route::post('/main_film/film_update','FilmController@film_update');
+            Route::get('admin/main_film/film_edit/{id}','FilmController@film_edit');
+            Route::post('admin/main_film/film_update','FilmController@film_update');
         //Studio
-            Route::get('/main_studio/studio_edit/{id}','StudioController@studio_edit');
-            Route::post('/main_studio/studio_update','StudioController@studio_update');
+            Route::get('admin/main_studio/studio_edit/{id}','StudioController@studio_edit');
+            Route::post('admin/main_studio/studio_update','StudioController@studio_update');
         //Kursi
-            Route::get('/main_kursi/kursi_edit/{id}','KursiController@kursi_edit');
-            Route::post('/main_kursi/kursi_update','KursiController@kursi_update');
+            Route::get('admin/main_kursi/kursi_edit/{id}','KursiController@kursi_edit');
+            Route::post('admin/main_kursi/kursi_update','KursiController@kursi_update');
         //Kategori
-            Route::get('/main_kategori/kategori_edit/{id}','KategoriController@kategori_edit');
-            Route::post('/main_kategori/kategori_update','KategoriController@kategori_update');
+            Route::get('admin/main_kategori/kategori_edit/{id}','KategoriController@kategori_edit');
+            Route::post('admin/main_kategori/kategori_update','KategoriController@kategori_update');
         //Jadwal
-            Route::get('/main_jadwal/jadwal_edit/{id}','JadwalController@jadwal_edit');
-            Route::post('/main_jadwal/jadwal_update','JadwalController@jadwal_update');
+            Route::get('admin/main_jadwal/jadwal_edit/{id}','JadwalController@jadwal_edit');
+            Route::post('admin/main_jadwal/jadwal_update','JadwalController@jadwal_update');
     //Hapus Data
         //Film
-            Route::get('/main_film/film_delete/{id}','FilmController@film_delete');
+            Route::get('admin/main_film/film_delete/{id}','FilmController@film_delete');
         //Studio
-            Route::get('/main_studio/studio_delete/{id}','StudioController@studio_delete');
+            Route::get('admin/main_studio/studio_delete/{id}','StudioController@studio_delete');
         //Kursi
-            Route::get('/main_kursi/kursi_delete/{id}','KursiController@kursi_delete');
+            Route::get('admin/main_kursi/kursi_delete/{id}','KursiController@kursi_delete');
         //Kategori
-            Route::get('/main_kategori/kategori_delete/{id}','KategoriController@Kategori_delete');
+            Route::get('admin/main_kategori/kategori_delete/{id}','KategoriController@Kategori_delete');
         //Jadwal
-            Route::get('/main_jadwal/jadwal_delete/{id}','JadwalController@Jadwal_delete');
+            Route::get('admin/main_jadwal/jadwal_delete/{id}','JadwalController@Jadwal_delete');
 
 //Image Data
 

@@ -13,7 +13,7 @@ class KursiController extends Controller
         $kursi = DB::table('kursi')->get();
 
         //Mengirim data ke view model
-        return view('main_kursi',['kursi' => $kursi ]);
+        return view('admin/main_kursi',['kursi' => $kursi ]);
     }
 
     //Add Route
@@ -24,7 +24,7 @@ class KursiController extends Controller
             'no_kursi' => $request->nokursi
         ]);
         //kembali ke menu utama
-        return redirect('main_kursi');
+        return redirect('admin/main_kursi');
     }
 
     //Edit Route
@@ -32,7 +32,7 @@ class KursiController extends Controller
         //Ngambil data film dari ID
         $kursi = DB::table('kursi')->where('id_kursi',$idkursi)->get();
         //Mindahin data film ke view model
-        return view('main_kursi_edit',['kursi' => $kursi]);
+        return view('admin/main_kursi_edit',['kursi' => $kursi]);
     }
 
     //Update Route
@@ -42,7 +42,7 @@ class KursiController extends Controller
             'no_kursi' => $request->nokursi
         ]);
         //kembali ke menu utama
-        return redirect('main_kursi');
+        return redirect('admin/main_kursi');
     }
 
     //Delete Route
@@ -50,6 +50,6 @@ class KursiController extends Controller
         //menghapus data berdasarkan ID
         DB::table('kursi')->where('id_kursi',$idkursi)->delete();
         //kembali ke view model
-        return redirect('main_kursi');
+        return redirect('admin/main_kursi');
     }
 }
