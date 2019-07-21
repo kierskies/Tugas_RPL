@@ -8,12 +8,17 @@ use Illuminate\Support\Facades\DB;
 class KursiController extends Controller
 {
     //View Route
-    public function index(){
-        //Ambil data dari tabel
-        $kursi = DB::table('kursi')->get();
-
+    public function index(Request $request)
+    {
+        $kursi = null;
+        if ($request->cari != null) {
+            $kursi = DB::table('kursi')->where('status_kursi', 'LIKE', "%$request->cari%")->get();
+        } else {
+            //Ambil data dari tabel
+            $kursi = DB::table('kursi')->get();
+        }
         //Mengirim data ke view model
-        return view('admin/main_kursi',['kursi' => $kursi ]);
+        return view('admin.main_kursi', ['kursi' => $kursi]);
     }
 
     //Add Route
@@ -21,7 +26,8 @@ class KursiController extends Controller
         //nyimpen data dari inputan ke database
         DB::table('kursi')->insert([
             'id_kursi' => $request->idkursi,
-            'no_kursi' => $request->nokursi
+            'no_kursi' => $request->nokursi,
+            'status_kursi' => $request->status_kursi
         ]);
         //kembali ke menu utama
         return redirect('admin/main_kursi');
@@ -32,7 +38,7 @@ class KursiController extends Controller
         //Ngambil data film dari ID
         $kursi = DB::table('kursi')->where('id_kursi',$idkursi)->get();
         //Mindahin data film ke view model
-        return view('admin/main_kursi_edit',['kursi' => $kursi]);
+        return view('admin.main_kursi_edit', ['kursi' => $kursi]);
     }
 
     //Update Route

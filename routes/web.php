@@ -22,71 +22,86 @@ Route::get('testlogin', function() {
 Route::get('/add','AddController@index');
 
 //Main Route
-    //Film Route
-        Route::get('admin/main_film','FilmController@index');
-    //Studio Route
-        Route::get('admin/main_studio','StudioController@index');
-    //Kursi Route
-        Route::get('admin/main_kursi', 'KursiController@index');
-    //Kategori Route
-        Route::get('admin/main_kategori', 'KategoriController@index');
-    //Kategori Route
-        Route::get('admin/main_jadwal', 'JadwalController@index');
+
+//Film Route
+Route::get('admin/main_film', 'FilmController@index');
+//Studio Route
+Route::get('admin/main_studio', 'StudioController@index');
+//Kursi Route
+Route::get('admin/main_kursi', 'KursiController@index');
+//Kategori Route
+Route::get('admin/main_kategori', 'KategoriController@index');
+//Jadwal Route
+Route::get('admin/main_jadwal', 'JadwalController@index');
 
 // Route
-    //Add Data
-        //Film
-            Route::get('admin/main_film/film_add', function (){
-                return view('admin/main_film_add');
-            });
-            Route::post('admin/main_film/film_storedata','FilmController@film_storedata');
-        //Studio
-            Route::get('admin/main_studio/studio_add', function(){
-                return view('admin/main_studio_add');
-            });
-            Route::post('admin/main_studio/studio_storedata','StudioController@studio_storedata');
-        //Kursi
-            Route::get('admin/main_kursi/kursi_add', function(){
-                return view('admin/main_kursi_add');
-            });
-            Route::post('admin/main_kursi/kursi_storedata','KursiController@kursi_storedata');
-        //Kategori
-            Route::get('admin/main_kategori/kategori_add', function(){
-                return view('admin/main_kategori_add');
-            });
-            Route::post('admin/main_kategori/kategori_storedata','KategoriController@kategori_storedata');
-        //Jadwal
-            Route::get('admin/main_jadwal/jadwal_add', function(){
-                return view('admin/main_jadwal_add');
-            });
-            Route::post('admin/main_jadwal/jadwal_storedata','JadwalController@jadwal_storedata');
+
+//Add Data
+
+//Film
+Route::get('admin/main_film/film_add', function () {
+    return view('admin/main_film_add');
+});
+Route::post('admin/main_film/film_storedata', 'FilmController@film_storedata');
+//Studio
+Route::get('admin/main_studio/studio_add', function () {
+    return view('admin/main_studio_add');
+});
+Route::post('admin/main_studio/studio_storedata', 'StudioController@studio_storedata');
+//Kursi
+Route::get('admin/main_kursi/kursi_add', function () {
+    return view('admin/main_kursi_add');
+});
+Route::post('admin/main_kursi/kursi_storedata', 'KursiController@kursi_storedata');
+//Kategori
+Route::get('admin/main_kategori/kategori_add', function () {
+    return view('admin/main_kategori_add');
+});
+Route::post('admin/main_kategori/kategori_storedata', 'KategoriController@kategori_storedata');
+//Jadwal
+Route::get('admin/main_jadwal/jadwal_add', function () {
+    $film = DB::table('film')->get();
+    $studio = DB::table('studio')->get();
+
+    return view('admin/main_jadwal_add', compact('studio', 'film'));
+});
+Route::post('admin/main_jadwal/jadwal_storedata', 'JadwalController@jadwal_storedata');
+
 //Edit Data
-        //Film
-            Route::get('admin/main_film/film_edit/{id}','FilmController@film_edit');
-            Route::post('admin/main_film/film_update','FilmController@film_update');
-        //Studio
-            Route::get('admin/main_studio/studio_edit/{id}','StudioController@studio_edit');
-            Route::post('admin/main_studio/studio_update','StudioController@studio_update');
-        //Kursi
-            Route::get('admin/main_kursi/kursi_edit/{id}','KursiController@kursi_edit');
-            Route::post('admin/main_kursi/kursi_update','KursiController@kursi_update');
-        //Kategori
-            Route::get('admin/main_kategori/kategori_edit/{id}','KategoriController@kategori_edit');
-            Route::post('admin/main_kategori/kategori_update','KategoriController@kategori_update');
-        //Jadwal
-            Route::get('admin/main_jadwal/jadwal_edit/{id}','JadwalController@jadwal_edit');
-            Route::post('admin/main_jadwal/jadwal_update','JadwalController@jadwal_update');
-    //Hapus Data
-        //Film
-            Route::get('admin/main_film/film_delete/{id}','FilmController@film_delete');
-        //Studio
-            Route::get('admin/main_studio/studio_delete/{id}','StudioController@studio_delete');
-        //Kursi
-            Route::get('admin/main_kursi/kursi_delete/{id}','KursiController@kursi_delete');
-        //Kategori
-            Route::get('admin/main_kategori/kategori_delete/{id}','KategoriController@Kategori_delete');
-        //Jadwal
-            Route::get('admin/main_jadwal/jadwal_delete/{id}','JadwalController@Jadwal_delete');
+
+//Film
+Route::get('admin/main_film/film_edit/{id}', 'FilmController@film_edit');
+Route::post('admin/main_film/film_update', 'FilmController@film_update');
+//Studio
+Route::get('admin/main_studio/studio_edit/{id}', 'StudioController@studio_edit');
+Route::post('admin/main_studio/studio_update', 'StudioController@studio_update');
+//Kursi
+Route::get('admin/main_kursi/kursi_edit/{id}', 'KursiController@kursi_edit');
+Route::post('admin/main_kursi/kursi_update', 'KursiController@kursi_update');
+//Kategori
+Route::get('admin/main_kategori/kategori_edit/{id}', 'KategoriController@kategori_edit');
+Route::post('admin/main_kategori/kategori_update', 'KategoriController@kategori_update');
+//Jadwal
+Route::get('admin/main_jadwal/jadwal_edit/{id}', 'JadwalController@jadwal_edit');
+Route::post('admin/main_jadwal/jadwal_update', 'JadwalController@jadwal_update');
+
+//Hapus Data
+//Film
+Route::get('admin/main_film/film_delete/{id}', 'FilmController@film_delete');
+//Studio
+Route::get('admin/main_studio/studio_delete/{id}', 'StudioController@studio_delete');
+//Kursi
+Route::get('admin/main_kursi/kursi_delete/{id}', 'KursiController@kursi_delete');
+//Kategori
+Route::get('admin/main_kategori/kategori_delete/{id}', 'KategoriController@Kategori_delete');
+//Jadwal
+Route::get('admin/main_jadwal/jadwal_delete/{id}', 'JadwalController@Jadwal_delete');
+
+//Cari
+
+//Film
+Route::get('admin/main_film/film_cari', 'FilmController@film_cari');
+
 
 //Image Data
 

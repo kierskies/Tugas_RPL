@@ -8,12 +8,17 @@ use Illuminate\Support\Facades\DB;
 class KategoriController extends Controller
 {
     //View Route
-    public function index(){
-        //Ambil data dari tabel
-        $kategori = DB::table('kategori')->get();
-
+    public function index(Request $request)
+    {
+        $kategori = null;
+        if ($request->cari != null) {
+            $kategori = DB::table('kategori')->where('judul', 'LIKE', "%$request->cari%")->get();
+        } else {
+            //Ambil data dari tabel
+            $kategori = DB::table('kategori')->get();
+        }
         //Mengirim data ke view model
-        return view('admin/main_kategori',['kategori' => $kategori ]);
+        return view('admin.main_kategori', ['kategori' => $kategori]);
     }
 
     //Add Route
@@ -32,7 +37,7 @@ class KategoriController extends Controller
         //Ngambil data film dari ID
         $kategori = DB::table('kategori')->where('id_kategori',$idkategori)->get();
         //Mindahin data film ke view model
-        return view('admin/main_kategori_edit',['kategori' => $kategori]);
+        return view('admin.main_kategori_edit', ['kategori' => $kategori]);
     }
 
     //Update Route

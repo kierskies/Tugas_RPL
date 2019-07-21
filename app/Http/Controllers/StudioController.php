@@ -8,12 +8,17 @@ use Illuminate\Support\Facades\DB;
 class StudioController extends Controller
 {
     //View Route
-    public function index(){
-        //Ambil data dari tabel
-        $studio = DB::table('studio')->get();
-
+    public function index(Request $request)
+    {
+        $studio = null;
+        if ($request->cari != null) {
+            $studio = DB::table('studio')->where('no_studio', 'LIKE', "%$request->cari%")->get();
+        } else {
+            //Ambil data dari tabel
+            $studio = DB::table('studio')->get();
+        }
         //Mengirim data ke view model
-        return view('admin/main_studio',['studio' => $studio ]);
+        return view('admin.main_studio', ['studio' => $studio]);
     }
 
     //Add Route
@@ -32,7 +37,7 @@ class StudioController extends Controller
         //Ngambil data film dari ID
         $studio = DB::table('studio')->where('id_studio',$idstudio)->get();
         //Mindahin data film ke view model
-        return view('admin/main_studio_edit',['studio' => $studio]);
+        return view('admin.main_studio_edit', ['studio' => $studio]);
     }
 
     //Update Route

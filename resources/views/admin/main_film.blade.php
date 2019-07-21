@@ -27,20 +27,43 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Logo -->
-        <a class="navbar-brand pt-0" href="main_film">
-{{--            <img src="{{ url('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">--}}
+        <a class="navbar-brand pt-0" href="/admin/main_film">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
         </a>
+        <!-- User -->
+        <ul class="nav align-items-center d-md-none">
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
+              </span>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('logout') }}" class="dropdown-item"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
+            </li>
+        </ul>
         <!-- Side Bar -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="main_film">
-                            <img src="{{ url('assets/img/brand/blue.png') }}">
+                        <a class="navbar-brand pt-0" href="/admin/main_film">
+                            <div class="p-3 mb-2 bg-gradient-primary text-white">
+                                CINEMATIXX
+                            </div>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -52,9 +75,10 @@
                 </div>
             </div>
             <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
+            <form class="mt-4 mb-3 d-md-none" action="/admin/main_film" method="GET" id="cari">
                 <div class="input-group input-group-rounded input-group-merge">
-                    <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+                    <input class="form-control" name="cari" placeholder="Cari Film" type="text"
+                           value="{{ old('cari') }}">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="fa fa-search"></span>
@@ -65,7 +89,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="main_film">
+                    <a class="nav-link" href="/admin/main_film">
                         <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
@@ -75,19 +99,19 @@
                     </a>
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
-                        <a href="main_film" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_film" class="nav-link list-group-item list-group-item-action">
                             Film
                         </a>
-                        <a href="main_studio" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_studio" class="nav-link list-group-item list-group-item-action">
                             Studio
                         </a>
-                        <a href="main_kursi" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_kursi" class="nav-link list-group-item list-group-item-action">
                             Kursi
                         </a>
-                        <a href="main_kategori" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
                         </a>
-                        <a href="main_jadwal" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_jadwal" class="nav-link list-group-item list-group-item-action">
                             Jadwal
                         </a>
                     </div>
@@ -104,18 +128,21 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/admin/main_film">Home</a>
             <!-- Form -->
-            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
+                  action="/admin/main_film" method="GET" id="cari">
                 <div class="form-group mb-0">
                     <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                         </div>
-                        <input class="form-control" placeholder="Search" type="text">
+                        <input class="form-control" name="cari" placeholder="Cari Film" type="text"
+                               value="{{ old('cari') }}">
                     </div>
                 </div>
             </form>
+
             <!-- User -->
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
@@ -160,7 +187,7 @@
                                 <h3 class="mb-0">Film List</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="main_film/film_add" class="btn btn-sm btn-primary">Tambah Data</a>
+                                <a href="/admin/main_film/film_add" class="btn btn-sm btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>
@@ -208,7 +235,15 @@
         </footer>
     </div>
 </div>
-<!-- Argon Scripts -->
+<!-- Scripts -->
+<script>
+    document.getElementById('body').onkeyup = function (e) {
+        if (e.key === 13) {
+            document.getElementById('cari').submit(); // your form has an id="form"
+        }
+        return true;
+    }
+</script>
 <!-- Core -->
 <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>

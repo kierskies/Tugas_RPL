@@ -27,7 +27,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="main_film">
+        <a class="navbar-brand pt-0" href="/admin/main_film">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
@@ -35,27 +35,16 @@
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
-                <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="ni ni-bell-55"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="{{ url('assets/img/theme/team-1-800x800.jpg') }}">
+                <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
               </span>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}>
+                        {{ __('Logout') }}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -69,8 +58,10 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="main_film">
-                            <img src="{{ url('assets/img/brand/blue.png') }}">
+                        <a class="navbar-brand pt-0" href="/admin/main_film">
+                            <div class="p-3 mb-2 bg-gradient-primary text-white">
+                                CINEMATIXX
+                            </div>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -81,22 +72,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
-                <div class="input-group input-group-rounded input-group-merge">
-                    <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="fa fa-search"></span>
-                        </div>
-                    </div>
-                </div>
-            </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="main_film">
-                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                    <a class="nav-link" href="/admin/main_film">
+                        <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
                 <li class="nav-item">
@@ -105,17 +85,20 @@
                     </a>
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
-                        <a href="main_film" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_film" class="nav-link list-group-item list-group-item-action">
                             Film
                         </a>
-                        <a href="main_studio" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_studio" class="nav-link list-group-item list-group-item-action">
                             Studio
                         </a>
-                        <a href="main_kursi" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_kursi" class="nav-link list-group-item list-group-item-action">
                             Kursi
                         </a>
-                        <a href="main_kategori" class="nav-link list-group-item list-group-item-action">
+                        <a href="/admin/main_kategori" class="nav-link list-group-item list-group-item-action">
                             Kategori
+                        </a>
+                        <a href="/admin/main_jadwal" class="nav-link list-group-item list-group-item-action">
+                            Jadwal
                         </a>
                     </div>
                 </li>
@@ -130,17 +113,6 @@
         <div class="container-fluid">
             <!-- Brand -->
             <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="main_film">Home</a>
-            <!-- Form -->
-            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-                <div class="form-group mb-0">
-                    <div class="input-group input-group-alternative">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="Search" type="text">
-                    </div>
-                </div>
-            </form>
             <!-- User -->
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
@@ -195,11 +167,13 @@
 
                                     <tr>
                                         <td>ID Kursi</td>
-                                        <td><input readonly name="idkursi" value="{{ $k->id_kursi }}"></td>
+                                        <td><input readonly class="form-control" name="idkursi"
+                                                   value="{{ $k->id_kursi }}"></td>
                                     </tr>
                                     <tr>
                                         <td>No Kursi</td>
-                                        <td><input type="text" required="required" name="nokursi" value="{{ $k->no_kursi }}"></td>
+                                        <td><input type="text" class="form-control" required="required" name="nokursi"
+                                                   value="{{ $k->no_kursi }}"></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>

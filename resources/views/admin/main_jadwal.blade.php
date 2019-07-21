@@ -23,10 +23,11 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Brand -->
+        <!-- Logo -->
         <a class="navbar-brand pt-0" href="/admin/main_film">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
@@ -35,7 +36,8 @@
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
                     <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
                 <img alt="Image placeholder" src="{{ url('assets/img/theme/adminlogo.png') }}">
@@ -43,7 +45,8 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a href="{{ route('logout') }}" class="dropdown-item"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -52,7 +55,7 @@
                 </div>
             </li>
         </ul>
-        <!-- Collapse -->
+        <!-- Side Bar -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
@@ -65,7 +68,9 @@
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
                             <span></span>
                             <span></span>
                         </button>
@@ -73,9 +78,9 @@
                 </div>
             </div>
             <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none" action="/admin/main_kursi" method="GET" id="cari">
+            <form class="mt-4 mb-3 d-md-none" action="/admin/main_film" method="GET" id="cari">
                 <div class="input-group input-group-rounded input-group-merge">
-                    <input class="form-control" name="cari" placeholder="Cari status kursi" type="text"
+                    <input class="form-control" name="cari" placeholder="Cari Film" type="text"
                            value="{{ old('cari') }}">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -116,8 +121,10 @@
                 </li>
             </ul>
         </div>
+        <!-- Side Bar -->
     </div>
 </nav>
+
 <!-- Main content -->
 <div class="main-content">
     <!-- Top navbar -->
@@ -127,21 +134,23 @@
             <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/admin/main_film">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
-                  action="/admin/main_kursi" method="GET" id="cari">
+                  action="/admin/main_film" method="GET" id="cari">
                 <div class="form-group mb-0">
                     <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                         </div>
-                        <input class="form-control" name="cari" placeholder="Cari status kursi" type="text"
+                        <input class="form-control" name="cari" placeholder="Cari Film" type="text"
                                value="{{ old('cari') }}">
                     </div>
                 </div>
             </form>
+
             <!-- User -->
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
                   <img alt="Image placeholder" src="../assets/img/theme/adminlogo.png">
@@ -152,7 +161,8 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="{{ route('logout') }}" class="dropdown-item"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="ni ni-user-run"></i>
                             {{ __('Logout') }}
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -179,10 +189,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Kursi List</h3>
+                                <h3 class="mb-0">Jadwal Film</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="/admin/main_kursi/kursi_add" class="btn btn-sm btn-primary">Tambah Data</a>
+                                <a href="/admin/main_jadwal/jadwal_add" class="btn btn-sm btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>
@@ -191,22 +201,26 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">ID Kursi</th>
-                                <th scope="col">No Kursi</th>
-                                <th scope="col">Status Kursi</th>
-                                <th scope="col" style="text-align: center;">Opsi</th>
+                                <th scope="col">ID Jadwal</th>
+                                <th scope="col">Nama Film</th>
+                                <th scope="col">Nama Studio</th>
+                                <th scope="col">Jam Tayang</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Opsi</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($kursi as $k)
+                            @foreach($jadwal as $j)
                                 <tr>
-                                    <th align="center">{{ $k->id_kursi }}</th>
-                                    <td >{{ $k->no_kursi }}</td>
-                                    <td>{{ $k->status_kursi }}</td>
+                                    <th scope="row">{{ $j->id_jadwal}}</th>
+                                    <td>{{ $j->judul }}</td>
+                                    <td>{{ $j->no_studio }}</td>
+                                    <td align="center">{{ $j->jam_tayang }}</td>
+                                    <td align="center">{{ $j->tanggal }}</td>
                                     <td align="center">
-                                        <a href="/admin/main_kursi/kursi_edit/{{ $k->id_kursi }}">Edit</a>
+                                        <a href="main_jadwal/jadwal_edit/{{ $j->id_jadwal }}">Edit</a>
                                         |
-                                        <a href="/admin/main_kursi/kursi_delete/{{ $k->id_kursi }}">Hapus</a>
+                                        <a href="main_jadwal/jadwal_delete/{{ $j->id_jadwal }}">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -221,7 +235,8 @@
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center text-xl-left text-muted">
-                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
+                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+                                       target="_blank">Sistem Informasi</a>
                     </div>
                 </div>
             </div>

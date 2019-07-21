@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PemesanController extends Controller
+class PemesananController extends Controller
 {
     //View Route
     public function index(){
         //Ambil data dari tabel
-        $film = DB::table('film')->get();
+
+        $pemesanan = DB::table('pemesanan')
+            ->join('jadwal', 'jadwal.id_jadwal', '=', 'pemesanan.id_jadwal')
+            ->join('pemesan', 'pemesan.id_pemesan', '=', 'pemesanan.id_pemesan')
+            ->select('pemesanan.*', 'jadwal.*', 'pemesan.*')
+            ->get();
 
         //Mengirim data ke view model
-        return view('pemesan/main_pemesan',['film' => $film ]);
+        return view('pemesan/main_pemesanan', ['pemesanan' => $pemesanan]);
     }
 
     //Add Route

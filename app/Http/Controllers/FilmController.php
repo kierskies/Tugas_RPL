@@ -8,16 +8,22 @@ use Illuminate\Support\Facades\DB;
 class FilmController extends Controller
 {
     //View Route
-    public function index(){
-        //Ambil data dari tabel
-        $film = DB::table('film')->get();
-
+    public function index(Request $request)
+    {
+        $film = null;
+        if ($request->cari != null) {
+            $film = DB::table('film')->where('judul', 'LIKE', "%$request->cari%")->get();
+        } else {
+            //Ambil data dari tabel
+            $film = DB::table('film')->get();
+        }
         //Mengirim data ke view model
-        return view('/admin/main_film',['film' => $film ]);
+        return view('admin.main_film', ['film' => $film]);
     }
 
     //Add Route
-    public function film_storedata(Request $request){
+    public function film_storedata(Request $request)
+    {
         //nyimpen data dari inputan ke database
         DB::table('film')->insert([
             'id_film' => $request->id,
@@ -30,17 +36,19 @@ class FilmController extends Controller
     }
 
     //Edit Route
-    public function film_edit($id){
+    public function film_edit($id)
+    {
         //Ngambil data film dari ID
-        $film = DB::table('film')->where('id_film',$id)->get();
+        $film = DB::table('film')->where('id_film', $id)->get();
         //Mindahin data film ke view model
-        return view('/admin/main_film_edit',['film' => $film]);
+        return view('admin.main_film_edit', ['film' => $film]);
     }
 
     //Update Route
-    public function film_update(Request $request){
+    public function film_update(Request $request)
+    {
         //update database dengan data baru
-        DB::table('film')->where('id_film',$request->id)->update([
+        DB::table('film')->where('id_film', $request->id)->update([
             'judul' => $request->namafilm,
             'sinopsis' => $request->sinopsis,
             'poster_film' => $request->poster
@@ -50,12 +58,11 @@ class FilmController extends Controller
     }
 
     //Delete Route
-    public function film_delete($id){
+    public function film_delete($id)
+    {
         //menghapus data berdasarkan ID
-        DB::table('film')->where('id_film',$id)->delete();
+        DB::table('film')->where('id_film', $id)->delete();
         //kembali ke view model
         return redirect('/admin/main_film');
     }
-
-    //Image Route
 }
