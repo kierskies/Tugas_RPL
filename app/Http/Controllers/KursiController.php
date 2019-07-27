@@ -27,7 +27,8 @@ class KursiController extends Controller
         DB::table('kursi')->insert([
             'id_kursi' => $request->idkursi,
             'no_kursi' => $request->nokursi,
-            'status_kursi' => $request->status_kursi
+            'status_kursi' => $request->status_kursi,
+            'harga' => $request->harga
         ]);
         //kembali ke menu utama
         return redirect('admin/main_kursi');

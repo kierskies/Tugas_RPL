@@ -185,6 +185,11 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>Harga</td>
+                                    <td>Rp.<input type="text" class="form-control" name="harga" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
                                 </tr>
                             </table>

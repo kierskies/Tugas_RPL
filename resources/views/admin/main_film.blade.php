@@ -199,6 +199,7 @@
                                 <th scope="col">ID Film</th>
                                 <th scope="col">Nama Film</th>
                                 <th scope="col">Sinopsis Film</th>
+                                <th scope="col">Kategori</th>
                                 <th scope="col">Poster</th>
                                 <th scope="col">Opsi</th>
                             </tr>
@@ -209,6 +210,7 @@
                                     <th scope="row" style="text-align: center">{{ $f->id_film }}</th>
                                     <td >{{ $f->judul }}</td>
                                     <td >{{ $f->sinopsis }}</td>
+                                    <td>{{ $f->nama_kategori }}</td>
                                     <td align="center">{{ $f->poster_film }}</td>
                                     <td align="center">
                                         <a href="main_film/film_edit/{{ $f->id_film }}">Edit</a>

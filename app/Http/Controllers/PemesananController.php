@@ -13,25 +13,27 @@ class PemesananController extends Controller
 
         $pemesanan = DB::table('pemesanan')
             ->join('jadwal', 'jadwal.id_jadwal', '=', 'pemesanan.id_jadwal')
-            ->join('pemesan', 'pemesan.id_pemesan', '=', 'pemesanan.id_pemesan')
-            ->select('pemesanan.*', 'jadwal.*', 'pemesan.*')
+            ->join('users', 'users.id', '=', 'pemesanan.id')
+            ->select('pemesanan.*', 'jadwal.*', 'users.name')
             ->get();
 
         //Mengirim data ke view model
-        return view('pemesan/main_pemesanan', ['pemesanan' => $pemesanan]);
+        return view('pemesanan.main_pemesanan', ['pemesanan' => $pemesanan]);
     }
 
     //Add Route
     public function film_storedata(Request $request){
         //nyimpen data dari inputan ke database
-        DB::table('film')->insert([
-            'id_film' => $request->id,
-            'judul' => $request->namafilm,
-            'sinopsis' => $request->sinopsis,
-            'poster_film' => $request->poster
+        DB::table('pemesanan')->insert([
+            'id_pemesanan' => $request->id_pemesanan,
+            'id_film' => $request->id_film,
+            'id_kursi' => $request->id_kursi,
+            'jam_tayang' => $request->jam_tayang,
+            'tanggal' => $request->tanggal,
+            'total_bayar' => $request->total_bayar
         ]);
         //kembali ke menu utama
-        return redirect('admin/main_film');
+        return redirect('pemesanan/main_pemesanan');
     }
 
     //Edit Route

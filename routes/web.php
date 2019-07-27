@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+USE Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,13 +37,17 @@ Route::get('admin/main_kategori', 'KategoriController@index');
 //Jadwal Route
 Route::get('admin/main_jadwal', 'JadwalController@index');
 
+//Pemesanan
+Route::get('pemesanan/main_pemesanan', 'PemesananController@index');
+
 // Route
 
 //Add Data
 
 //Film
 Route::get('admin/main_film/film_add', function () {
-    return view('admin/main_film_add');
+    $kategori = DB::table('kategori')->get();
+    return view('admin/main_film_add', compact('kategori'));
 });
 Route::post('admin/main_film/film_storedata', 'FilmController@film_storedata');
 //Studio
@@ -62,10 +69,23 @@ Route::post('admin/main_kategori/kategori_storedata', 'KategoriController@katego
 Route::get('admin/main_jadwal/jadwal_add', function () {
     $film = DB::table('film')->get();
     $studio = DB::table('studio')->get();
-
     return view('admin/main_jadwal_add', compact('studio', 'film'));
 });
 Route::post('admin/main_jadwal/jadwal_storedata', 'JadwalController@jadwal_storedata');
+
+
+//Pemesanan
+Route::get('pemesanan/main_pemesanan/pemesanan_add', function () {
+    $jadwal = DB::table('jadwal')
+        ->join('film', 'jadwal.id_film', '=', 'film.id_film')
+        ->select('jadwal.*', 'film.judul')
+        ->get();
+
+    $kursi = DB::table('kursi')->get();
+    return view('pemesanan/main_pemesanan_add', compact('jadwal'));
+});
+Route::post('pemesanan/main_pemesanan/pemesanan_storedata', 'PemesananController@pemesanan_storedata');
+
 
 //Edit Data
 

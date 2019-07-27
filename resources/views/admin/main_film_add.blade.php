@@ -183,6 +183,17 @@
                                                   style="resize: none;"></textarea></td>
                                 </tr>
                                 <tr>
+                                    <td>Kategori</td>
+                                    <td>
+                                        <select name="id_kategori" class="form-control">
+                                            <option>Pilih Kategori</option>
+                                            @foreach($kategori as $k)
+                                                <option value="{{ $k->id_kategori }}">{{ $k->nama_kategori }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>Poster</td>
                                     <td><input type="text" class="form-control" name="poster" required="required"></td>
                                 </tr>

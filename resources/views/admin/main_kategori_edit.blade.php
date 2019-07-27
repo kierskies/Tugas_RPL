@@ -172,7 +172,8 @@
                                     </tr>
                                     <tr>
                                         <td>Judul</td>
-                                        <td><input type="text" class="form-control" required="required" name="judul"
+                                        <td><input type="text" class="form-control" required="required"
+                                                   name="nama_kategori"
                                                    value="{{ $kat->judul }}"></td>
                                     </tr>
                                     <tr>

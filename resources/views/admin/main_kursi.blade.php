@@ -194,6 +194,7 @@
                                 <th scope="col">ID Kursi</th>
                                 <th scope="col">No Kursi</th>
                                 <th scope="col">Status Kursi</th>
+                                <th scope="col">Harga</th>
                                 <th scope="col" style="text-align: center;">Opsi</th>
                             </tr>
                             </thead>
@@ -203,6 +204,7 @@
                                     <th align="center">{{ $k->id_kursi }}</th>
                                     <td >{{ $k->no_kursi }}</td>
                                     <td>{{ $k->status_kursi }}</td>
+                                    <td>Rp. {{ $k->harga }}</td>
                                     <td align="center">
                                         <a href="/admin/main_kursi/kursi_edit/{{ $k->id_kursi }}">Edit</a>
                                         |

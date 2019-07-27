@@ -26,7 +26,7 @@ class KategoriController extends Controller
         //nyimpen data dari inputan ke database
         DB::table('kategori')->insert([
             'id_kategori' => $request->idkategori,
-            'judul' => $request->judul
+            'nama_kategori' => $request->nama_kategori
         ]);
         //kembali ke menu utama
         return redirect('admin/main_kategori');

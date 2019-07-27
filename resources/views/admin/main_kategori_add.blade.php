@@ -173,7 +173,8 @@
                                 </tr>
                                 <tr>
                                     <td>Judul</td>
-                                    <td><input type="text" class="form-control" name="judul" required="required"></td>
+                                    <td><input type="text" class="form-control" name="nama_kategori"
+                                               required="required"></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>

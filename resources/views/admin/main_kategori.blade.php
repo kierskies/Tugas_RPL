@@ -192,7 +192,7 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID Kategori</th>
-                                <th scope="col">Judul</th>
+                                <th scope="col">Nama Kategori</th>
                                 <th scope="col" style="text-align: center;">Opsi</th>
                             </tr>
                             </thead>
@@ -200,7 +200,7 @@
                             @foreach($kategori as $kat)
                                 <tr>
                                     <th align="center">{{ $kat->id_kategori }}</th>
-                                    <td >{{ $kat->judul }}</td>
+                                    <td>{{ $kat->nama_kategori }}</td>
                                     <td align="center">
                                         <a href="/admin/main_kategori/kategori_edit/{{ $kat->id_kategori }}">Edit</a>
                                         |

@@ -176,6 +176,11 @@
                                                    value="{{ $k->no_kursi }}"></td>
                                     </tr>
                                     <tr>
+                                        <td>Harga</td>
+                                        <td>Rp.<input type="text" class="form-control" required="required" name="harga"
+                                                      value="{{ $k->harga }}"></td>
+                                    </tr>
+                                    <tr>
                                         <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>
                                     </tr>
                                 </table>

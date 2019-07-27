@@ -12,10 +12,16 @@ class FilmController extends Controller
     {
         $film = null;
         if ($request->cari != null) {
-            $film = DB::table('film')->where('judul', 'LIKE', "%$request->cari%")->get();
+            $film = DB::table('film')
+                ->join('kategori', 'film.id_kategori', '=', 'kategori.id_kategori')
+                ->select('film.*', 'kategori.*')
+                ->where('judul', 'LIKE', "%$request->cari%")->get();
         } else {
             //Ambil data dari tabel
-            $film = DB::table('film')->get();
+            $film = DB::table('film')
+                ->join('kategori', 'film.id_kategori', '=', 'kategori.id_kategori')
+                ->select('film.*', 'kategori.*')
+                ->get();
         }
         //Mengirim data ke view model
         return view('admin.main_film', ['film' => $film]);
@@ -29,6 +35,7 @@ class FilmController extends Controller
             'id_film' => $request->id,
             'judul' => $request->namafilm,
             'sinopsis' => $request->sinopsis,
+            'id_kategori' => $request->id_kategori,
             'poster_film' => $request->poster
         ]);
         //kembali ke menu utama
