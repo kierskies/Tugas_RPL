@@ -23,11 +23,12 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Logo -->
-        <a class="navbar-brand pt-0" href="/pemesanan/main_pemesanan">
+        <a class="navbar-brand pt-0" href="/manager/main_manager">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
@@ -60,35 +61,43 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a class="navbar-brand pt-0" href="/pemesanan/main_pemesanan">
+                        <a class="navbar-brand pt-0" href="/manager/main_manager">
                             <div class="p-3 mb-2 bg-gradient-primary text-white">
                                 CINEMATIXX
                             </div>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
                             <span></span>
                             <span></span>
                         </button>
                     </div>
                 </div>
             </div>
+            <!-- Form -->
+            <form class="mt-4 mb-3 d-md-none" action="/manager/main_manager" method="GET" id="cari">
+                <div class="input-group input-group-rounded input-group-merge">
+                    <input class="form-control" name="cari" placeholder="Cari Nama Pemesan" type="text"
+                           value="{{ old('cari') }}">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fa fa-search"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/pemesanan/main_pemesanan">
-                        <i class="ni ni-tv-2 text-primary"></i> Menu Pemesanan
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/pemesanan/main_pemesanan/pemesanan_add">
-                        <i class="ni ni-basket text-red"></i> Pemesanan
+                    <a class="nav-link" href="/manager/main_manager">
+                        <i class="ni ni-tv-2 text-primary"></i> Data Laporan
                     </a>
                 </li>
             </ul>
         </div>
-        <!-- Side Bar -->
     </div>
 </nav>
 
@@ -98,16 +107,16 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/admin/main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/manager/main_manager">Home</a>
             <!-- Form -->
             <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
-                  action="/admin/main_film" method="GET" id="cari">
+                  action="/manager/main_manager" method="GET" id="cari">
                 <div class="form-group mb-0">
                     <div class="input-group input-group-alternative">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                         </div>
-                        <input class="form-control" name="cari" placeholder="Cari Film" type="text"
+                        <input class="form-control" name="cari" placeholder="Cari Nama Pemesan" type="text"
                                value="{{ old('cari') }}">
                     </div>
                 </div>
@@ -116,7 +125,8 @@
             <!-- User -->
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
                   <img alt="Image placeholder" src="../assets/img/theme/adminlogo.png">
@@ -127,7 +137,8 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="{{ route('logout') }}" class="dropdown-item"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="ni ni-user-run"></i>
                             {{ __('Logout') }}
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -154,7 +165,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Riwayat Pemesanan</h3>
+                                <h3 class="mb-0">Laporan Pemesanan</h3>
                             </div>
                         </div>
                     </div>
@@ -164,26 +175,18 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID Pemesanan</th>
-                                <th scope="col">ID Pemesan</th>
-                                <th scope="col">ID Jadwal</th>
-                                <th scope="col">No Kursi</th>
-                                <th scope="col">Total Bayar</th>
-                                <th scope="col">Opsi</th>
+                                <th scope="col">Nama Pemesan</th>
+                                <th scope="col">Tanggal Pemesanan</th>
+                                <th scope="col">Harga</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($pemesanan as $p)
                                 <tr>
-                                    <th scope="row" style="text-align: center">{{ $p->id_pemesanan }}</th>
-                                    <td>{{ $p->id }}</td>
-                                    <td>{{ $p->id_jadwal }}</td>
-                                    <td>{{ $p->id_kursi }}</td>
+                                    <td>{{ $p->id_pemesanan }}</td>
+                                    <td>{{ $p->name }}</td>
+                                    <td>{{ $p->tanggal }}</td>
                                     <td>{{ $p->total_pembayaran }}</td>
-                                    <td align="center">
-                                        <a href="main_film/film_edit/{{ $p->id_film }}">Edit</a>
-                                        |
-                                        <a href="main_film/film_delete/{{ $p->id_film }}">Hapus</a>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -197,7 +200,8 @@
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center text-xl-left text-muted">
-                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Sistem Informasi</a>
+                        &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+                                       target="_blank">Sistem Informasi</a>
                     </div>
                 </div>
             </div>

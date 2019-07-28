@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -23,12 +24,35 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
+    /*
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+
+//    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+
+        // User role
+        $userid = Auth::id();
+
+        // Check user role
+        switch ($userid) {
+            case '1': //Admin
+                return '/admin/main_film';
+                break;
+            case '2': //Manager
+                return '/manager/main_manager';
+                break;
+            case '3': //Petugas
+                return '/petugas/main_petugas';
+                break;
+            default:
+                return '/pemesanan/main_pemesanan';
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.

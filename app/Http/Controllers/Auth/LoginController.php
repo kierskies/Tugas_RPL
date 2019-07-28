@@ -41,11 +41,14 @@ class LoginController extends Controller
             case '1': //Admin
                 return '/admin/main_film';
                 break;
-            case '2': //Pemesan
-                return '/pemesanan/main_pemesanan';
+            case '2': //Manager
+                return '/manager/main_manager';
+                break;
+            case '3': //Petugas
+                return '/petugas/main_petugas';
                 break;
             default:
-                return '/login';
+                return '/pemesanan/main_pemesanan';
                 break;
         }
     }

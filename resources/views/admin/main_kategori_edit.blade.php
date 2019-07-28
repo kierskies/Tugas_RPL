@@ -174,7 +174,7 @@
                                         <td>Judul</td>
                                         <td><input type="text" class="form-control" required="required"
                                                    name="nama_kategori"
-                                                   value="{{ $kat->judul }}"></td>
+                                                   value="{{ $kat->nama_kategori }}"></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center"><input type="submit" value="Simpan Data" class="btn btn-sm btn-primary"></td>

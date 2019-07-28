@@ -114,6 +114,9 @@
                         <a href="/admin/main_jadwal" class="nav-link list-group-item list-group-item-action">
                             Jadwal
                         </a>
+                        <a href="/admin/main_users" class="nav-link list-group-item list-group-item-action">
+                            Pengguna
+                        </a>
                     </div>
                 </li>
             </ul>

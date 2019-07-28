@@ -36,9 +36,17 @@ Route::get('admin/main_kursi', 'KursiController@index');
 Route::get('admin/main_kategori', 'KategoriController@index');
 //Jadwal Route
 Route::get('admin/main_jadwal', 'JadwalController@index');
+//Users Route
+Route::get('admin/main_users', 'Admin_UsersController@index');
 
 //Pemesanan
 Route::get('pemesanan/main_pemesanan', 'PemesananController@index');
+
+//Manager
+Route::get('manager/main_manager', 'ManagerController@index');
+
+//Petugas
+Route::get('petugas/main_petugas', 'PetugasController@index');
 
 // Route
 
@@ -82,7 +90,7 @@ Route::get('pemesanan/main_pemesanan/pemesanan_add', function () {
         ->get();
 
     $kursi = DB::table('kursi')->get();
-    return view('pemesanan/main_pemesanan_add', compact('jadwal'));
+    return view('pemesanan/main_pemesanan_add', compact('jadwal', 'kursi'));
 });
 Route::post('pemesanan/main_pemesanan/pemesanan_storedata', 'PemesananController@pemesanan_storedata');
 
@@ -116,12 +124,17 @@ Route::get('admin/main_kursi/kursi_delete/{id}', 'KursiController@kursi_delete')
 Route::get('admin/main_kategori/kategori_delete/{id}', 'KategoriController@Kategori_delete');
 //Jadwal
 Route::get('admin/main_jadwal/jadwal_delete/{id}', 'JadwalController@Jadwal_delete');
+//Users
+Route::get('admin/main_users/users_delete/{id}', 'Admin_UsersController@users_delete');
 
 //Cari
 
 //Film
 Route::get('admin/main_film/film_cari', 'FilmController@film_cari');
 
+
+//Konfirmasi Petugas
+Route::get('petugas/main_petugas/petugas_konfirmasi/{id}', 'PetugasController@petugas_konfirmasi');
 
 //Image Data
 

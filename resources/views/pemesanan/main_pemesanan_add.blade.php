@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/admin/main_film">
+        <a class="navbar-brand pt-0" href="/pemesanan/main_pemesanan">
             <div class="p-3 mb-2 bg-gradient-primary text-white">
                 CINEMATIXX
             </div>
@@ -61,7 +61,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a class="navbar-brand pt-0" href="/admin/main_film">
+                        <a class="navbar-brand pt-0" href="/pemesanan/main_pemesanan">
                             <div class="p-3 mb-2 bg-gradient-primary text-white">
                                 CINEMATIXX
                             </div>
@@ -80,32 +80,14 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/main_film">
-                        <i class="ni ni-tv-2 text-primary"></i> Home
+                    <a class="nav-link" href="/pemesanan/main_pemesanan">
+                        <i class="ni ni-tv-2 text-primary"></i> Menu Pemesanan
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#submenu1">
-                        <i class="ni ni-bullet-list-67 text-red"></i> Data Bioskop
+                    <a class="nav-link" href="/pemesanan/main_pemesanan/pemesanan_add">
+                        <i class="ni ni-basket text-red"></i> Pemesanan
                     </a>
-                    <!-- Submenu content -->
-                    <div id='submenu1' class="collapse sidebar-submenu">
-                        <a href="/admin/main_film" class="nav-link list-group-item list-group-item-action">
-                            Film
-                        </a>
-                        <a href="/admin/main_studio" class="nav-link list-group-item list-group-item-action">
-                            Studio
-                        </a>
-                        <a href="/admin/main_kursi" class="nav-link list-group-item list-group-item-action">
-                            Kursi
-                        </a>
-                        <a href="/admin/main_kategori" class="nav-link list-group-item list-group-item-action">
-                            Kategori
-                        </a>
-                        <a href="/admin/main_jadwal" class="nav-link list-group-item list-group-item-action">
-                            Jadwal
-                        </a>
-                    </div>
                 </li>
             </ul>
         </div>
@@ -117,7 +99,8 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/admin/main_film">Home</a>
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+               href="/pemesanan/main_pemesanan">Home</a>
             <!-- User -->
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
@@ -169,10 +152,16 @@
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
-                        <form action="/admin/main_film/film_storedata" method="post" enctype="multipart/form-data">
+                        <form action="/pemesanan/main_pemesanan/pemesanan_storedata" method="post"
+                              enctype="multipart/form-data">
                             <table class="table align-items-center table-flush">
                                 {{ csrf_field() }}
 
+                                <tr>
+                                    <td>ID Pemesan</td>
+                                    <td><input type="text" class="form-control" name="id" value="{{ Auth::user()->id }}"
+                                               readonly></td>
+                                </tr>
                                 <tr>
                                     <td>ID Pemesanan</td>
                                     <td><input type="text" class="form-control" name="id_pemesanan" required="required">
@@ -181,31 +170,34 @@
                                 <tr>
                                     <td>Nama Film</td>
                                     <td>
-                                        <select class="form-control">
+                                        <select name="id_jadwal" class="form-control">
                                             <option>Pilih Film</option>
                                             @foreach($jadwal as $j)
-                                                <option value="{{ $j->id_film }}">{{ $j->judul }}
-                                                    : {{ $j->jam_tayang }}</option>
+                                                <option value="{{ $j->id_jadwal }}">{{ $j->judul }}</option>
                                             @endforeach
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>No Kursi</td>
-                                    <td><input class="form-control" name="sinopsis" required="required"></td>
-                                </tr>
-                                <tr>
-                                    <td>Kategori</td>
                                     <td>
-                                        <select name="id_kategori" class="form-control">
-                                            <option>Pilih Kategori</option>
-
+                                        <select name="id_kursi" class="form-control" onchange="inputHarga();">
+                                            <option>Pilih Kursi</option>
+                                            @foreach($kursi as $k)
+                                                <option value="{{ $k->id_kursi }}">{{ $k->no_kursi }}
+                                                    | {{ $k->status_kursi }}</option>
+                                            @endforeach
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Poster</td>
-                                    <td><input type="text" class="form-control" name="poster" required="required"></td>
+                                    <td>Total Harga</td>
+                                    <td><input type="text" id="harga" class="form-control" name="total_pembayaran"
+                                               readonly></td>
+                                </tr>
+                                <tr hidden>
+                                    <td hidden><input type="text" class="form-control" name="status" value="Unconfirmed"
+                                                      hidden></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" value="Simpan" class="btn btn-sm btn-primary"></td>
@@ -232,6 +224,12 @@
     </div>
 </div>
 <!-- Argon Scripts -->
+<script>
+    function inputHarga() {
+        var harga = document.getElementById("harga");
+        harga.value = "25000";
+    }
+</script>
 <!-- Core -->
 <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
