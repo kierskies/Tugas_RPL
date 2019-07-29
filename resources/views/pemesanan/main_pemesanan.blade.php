@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Dashboard</title>
+    <title>Home</title>
     <!-- Favicon -->
     <link href="{{ url('assets/img/brand/favicon.png') }}" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -168,7 +168,6 @@
                                 <th scope="col">ID Jadwal</th>
                                 <th scope="col">No Kursi</th>
                                 <th scope="col">Total Bayar</th>
-                                <th scope="col">Opsi</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -179,11 +178,6 @@
                                     <td>{{ $p->id_jadwal }}</td>
                                     <td>{{ $p->id_kursi }}</td>
                                     <td>{{ $p->total_pembayaran }}</td>
-                                    <td align="center">
-                                        <a href="main_film/film_edit/{{ $p->id_film }}">Edit</a>
-                                        |
-                                        <a href="main_film/film_delete/{{ $p->id_film }}">Hapus</a>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
