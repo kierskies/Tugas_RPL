@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d252c948-6738-41c1-8b83-e6d51a87a768" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_film.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_film_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_film_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_film_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_jadwal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_jadwal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_jadwal_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_jadwal_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_jadwal_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_jadwal_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kategori.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kategori_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kategori_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kategori_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kursi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kursi_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_kursi_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_kursi_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_studio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_studio_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_studio_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manager/main_manager.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manager/main_manager.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/petugas/main_petugas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/petugas/main_petugas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,6 +75,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ManagerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2535">
@@ -98,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/manager/main_manager.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="2565">
               <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
             </state>
           </provider>
@@ -312,7 +318,7 @@
     <option name="width" value="683" />
     <option name="height" value="768" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -324,85 +330,66 @@
         <subPane>
           <expand>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
+              <item name="Tugas_RPL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tugas_RPL" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="pemesanan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TugasSI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TugasSI" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,6 +473,10 @@
       <workItem from="1564334183612" duration="1325000" />
       <workItem from="1564371596937" duration="390000" />
       <workItem from="1564407460021" duration="415000" />
+      <workItem from="1564616684498" duration="22000" />
+      <workItem from="1564657550125" duration="109000" />
+      <workItem from="1564829223703" duration="2002000" />
+      <workItem from="1564887236697" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="Brand new shit comin up !&#10;&lt;Bootstraped&gt;">
       <created>1562546777016</created>
@@ -568,13 +559,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177375000" />
+    <option name="totallyTimeSpent" value="180120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29407296" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31534955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -942,16 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/main_kategori.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2910">
@@ -963,13 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2625">
           <caret line="175" column="99" selection-start-line="175" selection-start-column="99" selection-end-line="175" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ManagerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1046,10 +1020,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ManagerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pemesanan/main_pemesanan.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2535">
           <caret line="169" column="64" selection-start-line="169" selection-start-column="64" selection-end-line="169" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/manager/main_manager.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1060,10 +1048,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/manager/main_manager.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
+        <state relative-caret-position="458">
+          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
